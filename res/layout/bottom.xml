@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="55dp"
+    android:background="#FFFFFF"
+    android:orientation="horizontal" >
+    
+    <LinearLayout
+        android:id="@+id/id_tuijian"        
+        android:layout_width="0dp"
+        android:layout_height="fill_parent"
+        android:gravity="center"
+        android:layout_weight="1"
+        android:orientation="vertical">
+        
+        <ImageButton 
+            android:id="@+id/id_tuijian_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:src="@drawable/recommened_press"
+            android:background="#00000000"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="推荐"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/id_lanmu"
+        android:layout_width="0dp"
+        android:layout_height="fill_parent"
+        android:gravity="center"
+        android:layout_weight="1"
+        android:orientation="vertical">
+        
+        <ImageButton 
+            android:id="@+id/id_lanmu_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:src="@drawable/column"
+            android:background="#00000000"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="栏目"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/id_zhibo"
+        android:layout_width="0dp"
+        android:layout_height="fill_parent"
+        android:gravity="center"
+        android:layout_weight="1"
+        android:orientation="vertical">
+        
+        <ImageButton 
+            android:id="@+id/id_zhibo_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:src="@drawable/living"
+            android:background="#00000000"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="直播"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/id_wode"
+        android:layout_width="0dp"
+        android:layout_height="fill_parent"
+        android:gravity="center"
+        android:layout_weight="1"
+        android:orientation="vertical">
+        
+        <ImageButton
+            android:id="@+id/id_wode_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:src="@drawable/mine"
+            android:background="#00000000"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="我的"
+            />
+    </LinearLayout>
+    
+
+</LinearLayout>
