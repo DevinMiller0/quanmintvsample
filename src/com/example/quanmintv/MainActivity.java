@@ -1,5 +1,6 @@
 package com.example.quanmintv;
 
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,6 +9,7 @@ import android.os.Bundle;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -15,8 +17,16 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import com.lidroid.xutils.HttpUtils;
+import com.lidroid.xutils.exception.HttpException;
+import com.lidroid.xutils.http.RequestParams;
+import com.lidroid.xutils.http.ResponseInfo;
+import com.lidroid.xutils.http.callback.RequestCallBack;
+import com.lidroid.xutils.http.client.HttpRequest;
+import org.apache.http.client.methods.HttpTrace;
+import org.apache.http.entity.StringEntity;
 
-public class MainActivity<view> extends Activity implements OnClickListener {
+public class MainActivity extends Activity implements OnClickListener {
 
 	private ViewPager mViewPager;
 	private PagerAdapter mAdapter;
@@ -40,6 +50,9 @@ public class MainActivity<view> extends Activity implements OnClickListener {
         initView();
         
         initEvent();
+
+		//∑¢ÀÕ«Î«Û
+		requestHomeAdvList();
     }
 	private void initEvent() {
 	  tuijiantab.setOnClickListener(this);
@@ -160,6 +173,24 @@ public class MainActivity<view> extends Activity implements OnClickListener {
 		wodeimg.setImageResource(R.drawable.mine);
 		
 	}
+
+
+	private void  requestHomeAdvList()
+	{
+		HttpUtils httpUtils=new HttpUtils();
+
+		httpUtils.send(HttpRequest.HttpMethod.GET, "http://www.quanmin.tv/json/page/app-data/info.json", new RequestCallBack<String>() {
+			public void onSuccess(ResponseInfo<String> responseInfo) {
+				Log.d("requestHomeAdvList",""+responseInfo);
+			}
+
+			public void onFailure(HttpException e, String s) {
+				Log.d("requestHomeAdvList",""+s);
+			}
+		});
+
+	}
+
 		
 	}
 
